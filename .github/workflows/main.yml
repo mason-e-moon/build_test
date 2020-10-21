@@ -9,7 +9,7 @@ jobs:
     - name: say hello              
       run: echo "hi mason!" 
     - name: install pip              
-      run: apt update && \
-           pip3 install --upgrade pip && \                                
+      run: apt update && apt install -y python3-pip curl
+           pip3 install --upgrade pip
     - name: install docker
       run: curl -sSL https://get.docker.com/ | sh
