@@ -2,14 +2,13 @@ name: mason first workflow              # workflow 이름
 on: push                             # event trigger on push
 
 jobs:
-  build_test_mason:                             # job id
+  build:                             # job id
     name: Hello Mason         # job 이름
     runs-on: ubuntu-latest           # 가상 환경
-    steps:
+    steps:      
     - name: say hello              
       run: echo "hi mason!" 
-    - name: install pip              
-      run: apt update && apt install -y python3-pip curl
-           pip3 install --upgrade pip
-    - name: install docker
-      run: curl -sSL https://get.docker.com/ | sh
+    - name: install pip
+      run: sudo apt update && sudo apt upgrade -y
+     
+    
