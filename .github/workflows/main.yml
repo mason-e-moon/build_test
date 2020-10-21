@@ -11,6 +11,6 @@ jobs:
     - name: say hello              
       run: echo "hi mason!"        
     - name: docker build test    
-      uses: ./
+      uses: ./action/
     - name: say bye                
       run: echo "bye mason!"       
