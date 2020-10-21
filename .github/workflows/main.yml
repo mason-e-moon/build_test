@@ -15,7 +15,7 @@ jobs:
         pip3 install --upgrade pip
     - name: install docker
       run: curl -sSL https://get.docker.com/ | sh
+    - name: docker build
+      run: docker build -t hellomason ./docker/test.docker    
 
 
-     
-    
