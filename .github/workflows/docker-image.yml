@@ -18,7 +18,7 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag my-image-name:4144
         docker run my-image-name:4144
-        docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker login docker.selvas.com -u mason.e.moon -p dmstlr11!!
 #        docker push docker.selvas.com/mason/my-image-name:4144
 
 
