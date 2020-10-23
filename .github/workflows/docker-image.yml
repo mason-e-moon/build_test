@@ -3,20 +3,16 @@ name: Docker Image CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+  
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Build and Push the Docker image-mason      
       run: |
-        docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
+#        docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
+        docker login docker.io -u mason.e.moon -p dmstlr22@@
         docker build . --file Dockerfile --tag docker.selvas.com/mason.e.moon/my-image-name:4144
         docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144
         docker images
