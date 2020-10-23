@@ -18,7 +18,7 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag my-image-name:4144
         docker run my-image-name:4144
-        docker login docker.selvas.com/nlp/ -u mason.e.moon -p dmstlr11!!
+        docker login docker.selvas.com/nlp/ -u mldev -p selvas
 #        docker push docker.selvas.com/mason/my-image-name:4144
 
 
