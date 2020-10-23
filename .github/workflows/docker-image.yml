@@ -11,8 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build and Push the Docker image-mason      
       run: |
-        docker login docker.io -u mason.e.moon -p dmstlr22@@
+        docker login docker.selvas.com/ -u root -p dio#rnd1
         docker build . --file Dockerfile --tag docker.selvas.com/mason.e.moon/my-image-name:4144
-        docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144
-        docker images
+        docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144        
         docker push docker.selvas.com/mason.e.moon/my-image-name
