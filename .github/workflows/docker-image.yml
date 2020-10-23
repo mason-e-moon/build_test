@@ -19,4 +19,4 @@ jobs:
         docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
         docker build . --file Dockerfile --tag my-image-name:4144
         docker run -d my-image-name:4144        
-        docker push docker.selvas.com/mason.e.moon/my-image-name:4144
+        docker push docker.selvas.com/mason.e.moon/my-image-name
