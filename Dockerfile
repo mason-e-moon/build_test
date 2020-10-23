@@ -1,3 +1,3 @@
 FROM alpine:3.10
 
-ENTRYPOINT [ "echo" "hello docker mason" ]
+CMD echo 'hello docker mason2'
