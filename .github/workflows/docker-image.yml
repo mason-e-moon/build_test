@@ -15,6 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build and Push the Docker image-mason
+      with:
+        registry: docker.selvas.com/
+        username: mason.e.moon
+        password: dmstlr22@@
       run: |
         docker build . --file Dockerfile --tag my-image-name:4144
         docker run my-image-name:4144
