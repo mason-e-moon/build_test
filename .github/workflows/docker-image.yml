@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image-mason
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-
-    - name: Run the Docker image-mason
-      run: docker run my-image-name:$(date +%s)
+    - name: Build and Push the Docker image-mason
+      run: |
+        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        docker run my-image-name:$(date +%s)
+    
   
