@@ -15,3 +15,4 @@ jobs:
         docker build . --file Dockerfile --tag docker.selvas.com/mason.e.moon/my-image-name:4144
         docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144        
         docker push docker.selvas.com/mason.e.moon/my-image-name
+        
