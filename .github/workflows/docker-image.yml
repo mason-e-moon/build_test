@@ -12,7 +12,6 @@ jobs:
     - name: Build and Push the Docker image-mason      
       run: |
         docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
-        docker build . --file Dockerfile --tag docker.selvas.com/mason.e.moon/my-image-name:4144
-        docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144        
-        docker push docker.selvas.com/mason.e.moon/my-image-name
-        
+        docker build . --file Dockerfile --tag docker.selvas.com/nlp/mason/my-image-name:4144
+        docker run -d docker.selvas.com/nlp/mason/my-image-name:4144        
+        docker push docker.selvas.com/nlp/mason/my-image-name
