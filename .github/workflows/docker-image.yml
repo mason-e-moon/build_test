@@ -10,11 +10,11 @@ jobs:
     steps:
     - name: Check out the repo
     - uses: actions/checkout@v2    
-    
+
     - name: Build and Push the Docker image-mason
     - uses: docker/build-push-action@v1
       run: |
-        docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
-        docker build . --file Dockerfile --tag docker.selvas.com/mason.e.moon/my-image-name:4144
-        docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144        
-        docker push docker.selvas.com/mason.e.moon/my-image-name
+      docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
+      docker build . --file Dockerfile --tag docker.selvas.com/mason.e.moon/my-image-name:4144
+      docker run -d docker.selvas.com/mason.e.moon/my-image-name:4144        
+      docker push docker.selvas.com/mason.e.moon/my-image-name
