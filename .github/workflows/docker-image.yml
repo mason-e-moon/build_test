@@ -23,6 +23,6 @@ jobs:
       run: |
         docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@
         docker build . --file Dockerfile --tag ${DOCKER_REPOSITORY}nlp/mason/my-image-name:4144
-        docker run -d ${{DOCKER_REPOSITORY}nlp/mason/my-image-name:4144        
+        docker run -d ${DOCKER_REPOSITORY}nlp/mason/my-image-name:4144        
         docker push ${DOCKER_REPOSITORY}nlp/mason/my-image-name
 
