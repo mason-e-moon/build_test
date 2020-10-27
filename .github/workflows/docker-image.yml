@@ -8,8 +8,7 @@ jobs:
   gitenv_test:
     runs-on: ubuntu-latest
     steps:      
-    -  run: echo $GITHUB_SHA
-    
+    -  run: echo $GITHUB_SHA # trigger된 commit SHA 출력됨    
 
   encrypted_test:
     runs-on: ubuntu-latest
@@ -23,8 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: docker.selvas.com/ # token이 아닌 변수로 활용
-    steps:
-    - uses: actions/checkout@v2
+    steps:    
     - name: Build and Push the Docker image-mason      
       run: |
         docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@
