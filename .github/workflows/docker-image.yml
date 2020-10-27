@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: docker.selvas.com 
-      BUILD_IMAGE_TAG: ${DOCKER_REPOSITORY}/${GITHUB_REPOSITORY}:build
+      BUILD_IMAGE_TAG: ${DOCKER_REPOSITORY}/$GITHUB_REPOSITORY:build
       REPOSITORY: docker.selvas.com # token이 아닌 변수로 활용
       VERSION: $GITHUB_REF
 
