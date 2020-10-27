@@ -15,12 +15,14 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    env:
+      DOCKER_REPOSITORY: docker.selvas.com/      
     steps:
     - uses: actions/checkout@v2
     - name: Build and Push the Docker image-mason      
       run: |
-        docker login docker.selvas.com/ -u mason.e.moon -p dmstlr22@@
-        docker build . --file Dockerfile --tag docker.selvas.com/nlp/mason/my-image-name:4144
-        docker run -d docker.selvas.com/nlp/mason/my-image-name:4144        
-        docker push docker.selvas.com/nlp/mason/my-image-name
+        docker login $DOCKER_REPOSITORY -u mason.e.moon -p dmstlr22@@
+        docker build . --file Dockerfile --tag $DOCKER_REPOSITORYnlp/mason/my-image-name:4144
+        docker run -d $DOCKER_REPOSITORYnlp/mason/my-image-name:4144        
+        docker push $DOCKER_REPOSITORYnlp/mason/my-image-name
 
