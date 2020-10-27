@@ -5,13 +5,17 @@ on:
     branches: [ main ]
   
 jobs:
-  token_test:
+  gitenv_test:
+    run: echo $GITHUB_SHA
+    
+
+  encrypted_test:
     runs-on: ubuntu-latest
     env:
-      TEST1: ${{ secrets.MY_GITHUB_TOKEN}} # token을 사용하여 
+      TEST1: ${{secrets.MY_GITHUB_TOKEN}} # token을 사용하여 암호화함
     steps:
     - uses: actions/checkout@v2
-    - run: echo $TEST1 
+    - run: echo $TEST1 # Token에 적은 문자열이 *** 로 출력됨
 
   docker_test:
     runs-on: ubuntu-latest
