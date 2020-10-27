@@ -36,6 +36,6 @@ jobs:
     - name: Build and Push the Docker image
       run: |
         docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@
-        docker build -f Dockerfile -t $BUILD_IMAGE_TAG
+        docker build --file Dockerfile --tag $BUILD_IMAGE_TAG
         docker run -d --name $GITHUB_REPOSITORY $BUILD_IMAGE_TAG
         docker push $REPOSITORY:$VERSION
