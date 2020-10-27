@@ -33,9 +33,9 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Build and Push the Docker image-mason      
+    - name: Build and Push the Docker image
       run: |
         docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@
-        docker build -f Dockerfile -t $BUILD_IMAGE_TAG --build-arg VERSION=$VERSION .
-        docker run -t --rm --privileged --name $GITHUB_REPOSITORY $BUILD_IMAGE_TAG
+        docker build -f Dockerfile -t $BUILD_IMAGE_TAG
+        docker run -d --name $GITHUB_REPOSITORY $BUILD_IMAGE_TAG
         docker push $REPOSITORY:$VERSION
