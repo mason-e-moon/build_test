@@ -33,7 +33,7 @@ jobs:
 
     - name: Build and Push the Docker image
       run: |
-        docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@
-        docker build --file Dockerfile --tag ${DOCKER_REPOSITORY}/$GITHUB_REPOSITORY:${BUILD_IMAGE_TAG}
+        docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@        
+        docker build . --file Dockerfile --tag ${DOCKER_REPOSITORY}/$GITHUB_REPOSITORY:${BUILD_IMAGE_TAG}
         docker run -d --name $GITHUB_REPOSITORY ${BUILD_IMAGE_TAG}
         docker push ${DOCKER_REPOSITORY}:${VERSION}
