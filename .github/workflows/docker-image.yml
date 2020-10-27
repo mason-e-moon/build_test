@@ -22,7 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DOCKER_REPOSITORY: docker.selvas.com/ # token이 아닌 변수로 활용
-    steps:    
+    steps:
+    - uses: actions/checkout@v2
     - name: Build and Push the Docker image-mason      
       run: |
         docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@
