@@ -20,8 +20,8 @@ jobs:
 
   docker_test:
     runs-on: ubuntu-latest
-    env:
-      DOCKER_REPOSITORY: docker.selvas.com # token이 아닌 변수로 활용
+    env:      
+      DOCKER_REPOSITORY: docker.selvas.com/nlp # token이 아닌 변수로 활용
       BUILD_IMAGE_TAG: build
       VERSION: $GITHUB_REF
     steps:
@@ -34,6 +34,6 @@ jobs:
     - name: Build and Push the Docker image
       run: |
         docker login ${DOCKER_REPOSITORY} -u mason.e.moon -p dmstlr22@@        
-        docker build . --file Dockerfile --tag ${DOCKER_REPOSITORY}/$GITHUB_REPOSITORY:${BUILD_IMAGE_TAG}        
+        docker build . --file Dockerfile --tag ${DOCKER_REPOSITORY}/$GITHUB_REPOSITORY:${BUILD_IMAGE_TAG}
         docker run -d ${DOCKER_REPOSITORY}/$GITHUB_REPOSITORY:${BUILD_IMAGE_TAG}
         docker push ${DOCKER_REPOSITORY}:${VERSION}
